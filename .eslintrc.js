@@ -35,6 +35,7 @@ module.exports = {
             "never"
         ],
         "no-unused-vars": ["error", { "varsIgnorePattern": "React" }],
-        "no-console": 0
+        "no-console": 0,
+        "indent": ["error", 4]
     }
 };
