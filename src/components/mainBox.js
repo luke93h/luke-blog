@@ -13,7 +13,6 @@ class Box extends Component {
     }
     onTouchStart(e) {
         var rect = e.currentTarget.getBoundingClientRect()
-        console.log(rect)
         this.setState({
             activeClass: styles.active,
             position: {
