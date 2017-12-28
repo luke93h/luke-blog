@@ -1,0 +1,34 @@
+.wrapper{
+    margin-bottom: 0.63rem;
+    width: 88%;
+    min-height: 8.3rem;
+    box-shadow: 0px 0px 90px 16px #dcdcdc;
+    font-size: 0.25rem;
+    background-color: #fff;
+    border-radius: 0.12rem;
+    display: inline-block;
+}
+.main{
+    background-color: #fff;
+    border-radius: 0.12rem;
+    min-height: 8.3rem;
+    transition: 8s 0s all ease; 
+    .test{
+        display: inline-block;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: #000;
+    }
+}
+.active{
+    transform: scale(1.05, 1.05)
+}
+.full{
+    position: fixed;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin-top: 0;
+    margin-bottom: 0;
+}
