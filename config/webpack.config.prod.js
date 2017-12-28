@@ -206,6 +206,7 @@ module.exports = {
                         ],
                       },
                     },
+                    'less-loader'
                   ],
                 },
                 extractTextPluginOptions

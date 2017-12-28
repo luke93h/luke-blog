@@ -1,13 +1,27 @@
 .main{
     width: 88%;
     margin-left: 6%;
-    margin-top: 0.63rem;
+    margin-right: 6%;
+    margin-bottom: 0.63rem;
     background-color: #fff;
-    height: 8.3rem;
+    min-height: 8.3rem;
     border-radius: 0.12rem;
     box-shadow: 0px 0px 90px 16px #dcdcdc;
     transition: 1s 0s all ease; 
 }
 .active{
-    transform: scale(1.1, 1.1)
+    transform: scale(1.05, 1.05)
+}
+.full{
+    animation: 4s linear 0s 1 normal full;
+}
+@keyframes full { 
+    0% {
+    }
+    10% {
+        margin-left: -20%; 
+    } 
+    100% { 
+        margin-left: 100%; 
+    }  
 }
