@@ -6,5 +6,6 @@
 *react-router
 *webpack
 *eslint
+*postcss
 ###目标
 实现一款前后端都有的个人博客，作为个人博客使用

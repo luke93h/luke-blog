@@ -23,8 +23,8 @@ module.exports = {
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",
         "indent": [
-            1,
-            "tab"
+            2,
+            "4"
         ],
         "quotes": [
             1,
