@@ -13,15 +13,14 @@
     transform: scale(1.05, 1.05)
 }
 .full{
-    animation: 4s linear 0s 1 normal full;
-}
-@keyframes full { 
-    0% {
-    }
-    10% {
-        margin-left: -20%; 
-    } 
-    100% { 
-        margin-left: 100%; 
-    }  
+    position: fixed;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: auto;
 }
