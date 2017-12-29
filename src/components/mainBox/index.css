@@ -26,6 +26,10 @@
 }
 .full{
     position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
     .body{
         animation: full 3s ease-in 1s 1 normal both paused;
     }
