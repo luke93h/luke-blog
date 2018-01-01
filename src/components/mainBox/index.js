@@ -12,6 +12,9 @@ class Box extends Component {
             wrapperStyle: {},
             initPos:{}
         }
+        this.onTouchStart = this.onTouchStart.bind(this)
+        this.onTouchEnd = this.onTouchEnd.bind(this)
+        this.onTap = this.onTap.bind(this)
         this.isFull = false
     }
     onTouchStart(e) {
@@ -42,6 +45,7 @@ class Box extends Component {
         this.isFull = true
         var rect = this.rect
         this.top = rect.top
+        this.bottom = rect.bottom
         this.setState({
             fullClass: styles.full,
             activeClass: '',
@@ -55,15 +59,29 @@ class Box extends Component {
         var start = this.start
         if (!start) start = this.start = timestamp;
         var progress = (new Date()).valueOf() - start;
+        var calProgress = this.calPro(progress/300)
         this.setState({
-            fullClass: styles.full,
-            activeClass: '',
             initPos: {
-                top: (1-progress/300)*this.top + 'px'
+                top: Math.max((1-calProgress)*this.top, -10) + 'px',
+                bottom: Math.max((1-calProgress)*this.bottom, -10) + 'px',
             }
         })
         if (progress < 300) {
             requestAnimFrame(this.step.bind(this));
+        }else{
+            this.setState({
+                initPos: {
+                    top: '0px',
+                    bottom: '0px'
+                }
+            })
+        }
+    }
+    calPro(pro){
+        if(pro<0.8){
+            return pro/0.6
+        }else{
+            return 1/0.6 - pro/0.6 + 1 
         }
     }
     render() {
@@ -74,9 +92,9 @@ class Box extends Component {
             <div style={this.state.wrapperStyle} className={styles.wrapper}>
                 <Hammer 
                     // 通过css类添加最终覆盖页面的最终值
-                    onTouchStart={this.onTouchStart.bind(this)} 
-                    onTouchEnd={this.onTouchEnd.bind(this)}
-                    onTap={this.onTap.bind(this)}
+                    onTouchStart={this.onTouchStart} 
+                    onTouchEnd={this.onTouchEnd}
+                    onTap={this.onTap}
                     // 通过计算的得到的初始值
                     style={this.state.position}
                 >
@@ -85,7 +103,7 @@ class Box extends Component {
                             <div className={styles.head}>
                                 <img src="./images/img2.jpg" alt="" />
                             </div>
-                            <div className={`${styles.content}`}>
+                            <div className={`${styles.content} ${this.state.fullClass? '' : styles.hide}`}>
                                 {
                                     this.props.children
                                 }

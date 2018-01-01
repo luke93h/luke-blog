@@ -17,11 +17,22 @@
         border-radius: 0.22rem;
         box-shadow: 0px 0px 100px 10px rgba(220, 220, 220, 0.6);
         display: inline-block;
+        font-size: 0.12rem;
+        overflow-y: scroll;
         .head{
             border-radius: 0.22rem;
             img{
                 border-radius: 0.22rem;
                 width: 100%;
+            }
+        }
+        .content{
+            display: block;
+            opacity: 1;
+            transition-duration: 0.3s;
+            &.hide{
+                display: none;
+                opacity: 0;
             }
         }
     }
@@ -78,7 +89,6 @@
     }
 }
 @keyframes full-border-radius {
-    
     0%{
         border-radius: 0.22rem;
     }
