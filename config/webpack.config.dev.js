@@ -173,7 +173,8 @@ module.exports = {
 								options: {
 									importLoaders: 1,
 									modules: true,
-									localIdentName: '[local][hash:base64:5]'
+									localIdentName: '[local][hash:base64:5]',
+									camelCase: true
 								},
 							},
 							{
