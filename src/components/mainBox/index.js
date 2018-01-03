@@ -43,8 +43,6 @@ class Box extends Component {
         this.close = this.close.bind(this)
         this.isFull = false
     }
-    componentDidMount() {
-    }
     onTouchStart(e) {
         if (this.isFull) {
             return
@@ -109,7 +107,6 @@ class Box extends Component {
                 isFullComplete: true
             },() => {
                 ModalHelper.afterOpen()
-
                 this.myScroll = new IScroll(this.wrapper, {
                     bounce: true,
                     disableMouse: true,
@@ -125,7 +122,7 @@ class Box extends Component {
         this.top = rect.top
         this.bottom = window.screen.height - rect.bottom
         ModalHelper.beforeClose()
-        this.myScroll.scrollTo(0,0,0)
+        this.myScroll.scrollTo(0,0,300)
         this.myScroll.destroy();
         this.myScroll = null
         this.setState({

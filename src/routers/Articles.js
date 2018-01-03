@@ -2,15 +2,20 @@ import React, { Component } from 'react'
 import styles from './Articles.css'
 import MainBox from '../components/mainBox/index'
 class Articles extends Component {
+    componentDidMount(){
+    }
     render() {
         return (
             <div
+                ref = {(wrapper) => {
+                    this.wrapper = wrapper
+                }}
             >
                 <div
                     className={styles.main}
                 >
                     <MainBox>
-                        <div style={{ fontSize: '0.25rem' }}>aaaabbbb</div>
+                        <div>aaaabbbb</div>
                         <div>aaaabbbb</div>
                         <div>aaaabbbb</div>
                         <div>aaaabbbb</div>
