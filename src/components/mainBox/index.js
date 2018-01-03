@@ -110,13 +110,13 @@ class Box extends Component {
             },() => {
                 ModalHelper.afterOpen()
 
-                /* this.myScroll = new IScroll(this.wrapper, {
+                this.myScroll = new IScroll(this.wrapper, {
                     bounce: true,
                     disableMouse: true,
                     disablePointer: true,
                     preventDefault: false
                 });
-                console.dir(this.myScroll); */
+                console.dir(this.myScroll);
             })
         }
     }
@@ -125,8 +125,9 @@ class Box extends Component {
         this.top = rect.top
         this.bottom = window.screen.height - rect.bottom
         ModalHelper.beforeClose()
-        /* this.myScroll.destroy();
-        this.myScroll = null */
+        this.myScroll.scrollTo(0,0,0)
+        this.myScroll.destroy();
+        this.myScroll = null
         this.setState({
             fullClass: '',
             closeClass: styles.close,
@@ -214,13 +215,24 @@ class Box extends Component {
                             className={styles.body}
                             style={{ ...this.state.initPos, ...this.state.finalPos }}
                         >
-                            <div className={styles.head}>
-                                <img src="./images/img2.jpg" alt="" />
-                            </div>
-                            <div className={`${styles.content} ${this.state.isContent ? '' : styles.hide}`}>
-                                {
-                                    this.props.children
-                                }
+                            <div 
+                                ref={(wrapper) => {
+                                    this.wrapper = wrapper
+                                }}
+                                style={{
+                                    height: '100%'
+                                }}
+                            >
+                                <div>       
+                                    <div className={styles.head}>
+                                        <img src="./images/img2.jpg" alt="" />
+                                    </div>
+                                    <div className={`${styles.content} ${this.state.isContent ? '' : styles.hide}`}>
+                                        {
+                                            this.props.children
+                                        }
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
