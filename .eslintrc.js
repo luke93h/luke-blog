@@ -38,5 +38,8 @@ module.exports = {
         "no-console": 0,
         "indent": ["error", 4],
         "react/prop-types":  0
+    },
+    "globals": {
+        "IScroll": true
     }
 };

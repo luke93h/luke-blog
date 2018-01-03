@@ -4,7 +4,7 @@ class Header extends Component {
     render() {
         return (
             <header className={styles.head}>
-                <span>Luke Blog</span>
+                <span>Luke</span>
             </header>
         )
     }

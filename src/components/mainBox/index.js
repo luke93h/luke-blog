@@ -2,6 +2,28 @@ import React, { Component } from 'react'
 import styles from './index.css'
 import Hammer from 'react-hammerjs';
 import requestAnimFrame from '../../utils/requestAnimFrame.js'
+
+/**
+  * ModalHelper helpers resolve the modal scrolling issue on mobile devices
+  * https://github.com/twbs/bootstrap/issues/15852
+  * requires document.scrollingElement polyfill https://uedsky.com/demo/src/polyfills/document.scrollingElement.js
+  */
+var ModalHelper = (function (bodyCls) {
+    var scrollTop;
+    return {
+        afterOpen: function () {
+            scrollTop = document.scrollingElement.scrollTop;
+            document.body.classList.add(bodyCls);
+            document.body.style.top = -scrollTop + 'px';
+        },
+        beforeClose: function () {
+            document.body.classList.remove(bodyCls);
+            // scrollTop lost after set position:fixed, restore it back.
+            document.scrollingElement.scrollTop = scrollTop;
+        }
+    };
+})('modal-open');
+
 class Box extends Component {
     constructor(props){
         super(props)
@@ -20,6 +42,8 @@ class Box extends Component {
         this.onTap = this.onTap.bind(this)
         this.close = this.close.bind(this)
         this.isFull = false
+    }
+    componentDidMount() {
     }
     onTouchStart(e) {
         if (this.isFull) {
@@ -47,11 +71,6 @@ class Box extends Component {
             return
         }
         this.isFull = true
-        setTimeout(() => {
-            this.setState({
-                isFullComplete: true
-            })
-        }, 500);
         var rect = this.rect
         this.top = rect.top
         this.bottom = window.screen.height - rect.bottom
@@ -86,7 +105,18 @@ class Box extends Component {
                 initPos: {
                     top: '0px',
                     bottom: '0px'
-                }
+                },
+                isFullComplete: true
+            },() => {
+                ModalHelper.afterOpen()
+
+                /* this.myScroll = new IScroll(this.wrapper, {
+                    bounce: true,
+                    disableMouse: true,
+                    disablePointer: true,
+                    preventDefault: false
+                });
+                console.dir(this.myScroll); */
             })
         }
     }
@@ -94,6 +124,9 @@ class Box extends Component {
         var rect = this.rect
         this.top = rect.top
         this.bottom = window.screen.height - rect.bottom
+        ModalHelper.beforeClose()
+        /* this.myScroll.destroy();
+        this.myScroll = null */
         this.setState({
             fullClass: '',
             closeClass: styles.close,
@@ -103,8 +136,6 @@ class Box extends Component {
                 bottom: 0
             },
             isFullComplete: false
-        }, () => {
-            this.isFull = false
         })
         this.start = (new Date()).valueOf()
         this.reverseStep()
@@ -133,6 +164,8 @@ class Box extends Component {
                 },
                 closeClass: '',
                 isContent: false
+            }, () => {
+                this.isFull = false
             })
         }
     }
@@ -156,7 +189,7 @@ class Box extends Component {
         // 第三层为真实内容，做动画
         return (
             // 第一层，占位元素
-            <div style={this.state.wrapperStyle} className={styles.wrapper}>
+            <div style={this.state.wrapperStyle} className={styles.wrapper} >
                 <Hammer 
                     // 通过css类添加最终覆盖页面的最终值
                     onTouchStart={this.onTouchStart} 
@@ -165,7 +198,10 @@ class Box extends Component {
                     // 通过计算的得到的初始值
                     // 第二层，容器
                 >
-                    <div className={`${styles.main} ${this.state.activeClass} ${this.state.fullClass} ${this.state.closeClass}`}>
+                    <div
+                        className={`${styles.main} ${this.state.activeClass} ${this.state.fullClass} ${this.state.closeClass}`}
+                        
+                    >
                         {this.state.isFullComplete && 
                         <Hammer
                             onTap={this.close}
@@ -174,11 +210,14 @@ class Box extends Component {
                         </Hammer>
                         // 第三层，内容
                         }
-                        <div className={styles.body} style={{...this.state.initPos, ...this.state.finalPos}}>
+                        <div
+                            className={styles.body}
+                            style={{ ...this.state.initPos, ...this.state.finalPos }}
+                        >
                             <div className={styles.head}>
                                 <img src="./images/img2.jpg" alt="" />
                             </div>
-                            <div className={`${styles.content} ${this.state.isContent? '' : styles.hide}`}>
+                            <div className={`${styles.content} ${this.state.isContent ? '' : styles.hide}`}>
                                 {
                                     this.props.children
                                 }
