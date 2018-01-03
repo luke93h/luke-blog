@@ -1,0 +1,22 @@
+a.item{
+    box-sizing: border-box;
+    display: inline-block;
+    height: 0.8rem;
+    text-align: center;
+    font-size: 0.26rem;
+    width: 33%;
+    transition-duration: 0.3s;
+    text-decoration: none;
+    border-left: 1px solid rgba(50, 50, 50, 0.2);;
+    &.active{
+        background-color: rgb(177, 215, 250);
+        color: rgb(16, 118, 214);
+    }
+    :global(.iconfont){
+        font-size: 0.35rem;
+        line-height: 0.8rem;
+    }
+    &:first-of-type{
+        border-left: 0px solid #999;
+    }
+}

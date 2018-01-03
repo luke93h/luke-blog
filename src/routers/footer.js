@@ -1,9 +1,19 @@
 import React, { Component } from 'react'
+import styles from './footer.css'
+import  NaviItem from '../components/naviItem'
 class Footer extends Component {
     render() {
         return (
-            <div className="App">
-                <span className="iconfont icon-remind_fill"></span>
+            <div className={styles.main}>
+                <NaviItem
+                    icon='icon-shouye'
+                />
+                <NaviItem
+                    icon='icon-fenlei'
+                />
+                <NaviItem
+                    icon='icon-wode'
+                />
             </div>
         )
     }

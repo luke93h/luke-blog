@@ -222,7 +222,10 @@ class Box extends Component {
                             >
                                 <div>       
                                     <div className={styles.head}>
-                                        <img src="./images/img2.jpg" alt="" />
+                                        <img src={this.props.imgSrc} alt="" />
+                                        <div className={styles.title1}>
+                                            {this.props.title}
+                                        </div>
                                     </div>
                                     <div className={`${styles.content} ${this.state.isContent ? '' : styles.hide}`}>
                                         {

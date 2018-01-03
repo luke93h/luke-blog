@@ -14,8 +14,16 @@ class Articles extends Component {
                 <div
                     className={styles.main}
                 >
-                    <MainBox>
-                        <div>aaaabbbb</div>
+                    <MainBox
+                        imgSrc='./images/img.jpg'
+                        title={
+                            <div>
+                                <div>创作时</div>
+                                <div>的一些思考</div>
+                            </div>
+                        }
+                    >
+                        <div>我是标题</div>
                         <div>aaaabbbb</div>
                         <div>aaaabbbb</div>
                         <div>aaaabbbb</div>
@@ -29,7 +37,10 @@ class Articles extends Component {
                         <div>aaaabbbb</div>
                         <div>aaaabbbb</div>
                     </MainBox>
-                    <MainBox>
+                    <MainBox
+                        imgSrc='./images/img2.jpg'
+                        title='说明'
+                    >
                         <div>123123132231413242342352344234</div>
                         <div>123123132231413242342352344234</div>
                         <div>123123132231413242342352344234</div>
@@ -40,6 +51,18 @@ class Articles extends Component {
                         <div>123123132231413242342352344234</div>
                         <div>123123132231413242342352344234</div>
                         <div>123123132231413242342352344234</div>
+                    </MainBox>
+                    <MainBox
+                        imgSrc='./images/img3.jpg'
+                        title='占位1'
+                    >
+                        <div>占位1</div>
+                    </MainBox>
+                    <MainBox
+                        imgSrc='./images/img4.png'
+                        title='占位2'
+                    >
+                        <div>占位2</div>
                     </MainBox>
                 </div>
             </div>
