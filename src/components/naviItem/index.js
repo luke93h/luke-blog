@@ -11,12 +11,12 @@ class Footer extends Component {
         this.onTouchStart = this.onTouchStart.bind(this)
         this.onTouchEnd = this.onTouchEnd.bind(this)
     }
-    onTouchStart(){
+    onTouchStart() {
         this.setState({
             active: true
         })
     }
-    onTouchEnd(){
+    onTouchEnd() {
         this.setState({
             active: false
         })
@@ -24,10 +24,10 @@ class Footer extends Component {
     render() {
         return (
             <Link 
-                className = {`${styles.item} ${this.state.active?styles.active:''}`} 
+                className = {`${styles.item} ${this.state.active?styles.active:''}`}
                 onTouchStart = {this.onTouchStart}
                 onTouchEnd = {this.onTouchEnd}
-                to='/'
+                to = {this.props.to}
             >
                 <div className={`iconfont ${this.props.icon}`}></div>
             </Link>

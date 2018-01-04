@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Articles from './Articles.js'
+import { CSSTransition } from 'react-transition-group'
 
 const Player = () => {
     return (
@@ -11,12 +12,35 @@ const Player = () => {
     )
 }
 class Main extends Component {
+    constructor (props) {
+        super(props)
+    }
     render() {
-        return (
-            <Switch>
-                <Route exact path='/' component={Articles} />
-                <Route path='/roster/:number' component={Player} />
-            </Switch>
+        return (<div>
+            <CSSTransition
+                classNames="example"
+                timeout={1000}
+            >
+                <Switch>
+                    <Route
+                        exact 
+                        path='/' 
+                        component={Articles}
+                        key='/'
+                    />
+                    <Route 
+                        path='/projects/:number' 
+                        component={Player}
+                        key='projects'
+                    />
+                    <Route 
+                        path='/user' 
+                        component={Player} 
+                        key='user'
+                    />
+                </Switch>
+            </CSSTransition>
+        </div>
         )
     }
 }

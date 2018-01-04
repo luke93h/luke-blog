@@ -7,12 +7,15 @@ class Footer extends Component {
             <div className={styles.main}>
                 <NaviItem
                     icon='icon-shouye'
+                    to='/'
                 />
                 <NaviItem
                     icon='icon-fenlei'
+                    to='/projects'
                 />
                 <NaviItem
                     icon='icon-wode'
+                    to='/user'
                 />
             </div>
         )
