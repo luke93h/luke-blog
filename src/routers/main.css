@@ -1,18 +1,18 @@
 .main{background-color: #f8f8f8}
 :global(.example-enter) {
   opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
 
 :global(.example-enter.example-enter-active) {
   opacity: 1;
-  transition: opacity 5000ms ease-in;
 }
 
-:global(.example-leave) {
+:global(.fade-exit) {
+  transition: opacity 300ms ease-in;
   opacity: 1;
 }
 
-:global(.example-leave.example-leave-active) {
+:global(.fade-exit.fade-exit-active) {
   opacity: 0.01;
-  transition: opacity 3000ms ease-in;
 }

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Articles from './Articles.js'
-import { CSSTransition } from 'react-transition-group'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { withRouter } from 'react-router'
+import './main.css'
 
 const Player = () => {
     return (
@@ -16,33 +18,38 @@ class Main extends Component {
         super(props)
     }
     render() {
-        return (<div>
-            <CSSTransition
-                classNames="example"
-                timeout={1000}
-            >
-                <Switch>
-                    <Route
-                        exact 
-                        path='/' 
-                        component={Articles}
-                        key='/'
-                    />
-                    <Route 
-                        path='/projects/:number' 
-                        component={Player}
-                        key='projects'
-                    />
-                    <Route 
-                        path='/user' 
-                        component={Player} 
-                        key='user'
-                    />
-                </Switch>
-            </CSSTransition>
-        </div>
+        var location = this.props.location
+        return (
+            <TransitionGroup>
+                <CSSTransition
+                    key={location.key}
+                    timeout={{ enter: 300, exit: 300 }}
+                    classNames="example"
+                >
+                    <Switch
+                        location={location}
+                    >
+                        <Route
+                            exact 
+                            path='/' 
+                            component={Articles}
+                            key='/'
+                        />
+                        <Route 
+                            path='/projects/:number' 
+                            component={Player}
+                            key='projects'
+                        />
+                        <Route 
+                            path='/user' 
+                            component={Player} 
+                            key='user'
+                        />
+                    </Switch>
+                </CSSTransition>
+            </TransitionGroup>
         )
     }
 }
 
-export default Main
+export default withRouter(Main)    
