@@ -8,7 +8,9 @@ class Articles extends Component {
             <div
                 className={styles.main}
             >
-                123
+                <div className={styles.head}>
+                    <img src="./images/user.png" alt=""/>
+                </div>
             </div>
             
         )

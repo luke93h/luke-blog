@@ -13,7 +13,6 @@ class Main extends Component {
     }
     render() {
         var location = this.props.location
-        console.log(this.props)
         return (
             <TransitionGroup 
                 className={styles.main}
