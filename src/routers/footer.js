@@ -11,7 +11,7 @@ class Footer extends Component {
                 />
                 <NaviItem
                     icon='icon-fenlei'
-                    to='/projects'
+                    to='/apps'
                 />
                 <NaviItem
                     icon='icon-wode'

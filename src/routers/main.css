@@ -1,18 +1,24 @@
-.main{background-color: #f8f8f8}
-:global(.example-enter) {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+.main{
+  position: relative;
+}
+:global(.fade-enter) {
+  left: 100%;
+  right: -100%;
+  transition: all 400ms linear;
 }
 
-:global(.example-enter.example-enter-active) {
-  opacity: 1;
+:global(.fade-enter.fade-enter-active) {
+  left: 0;
+  right: 0;
 }
 
 :global(.fade-exit) {
-  transition: opacity 300ms ease-in;
-  opacity: 1;
+  transition: all 400ms linear;
+  right: 0;
+  left: 0;
 }
 
 :global(.fade-exit.fade-exit-active) {
-  opacity: 0.01;
-}
+  right: 100%;
+  left: -100%;
+};
