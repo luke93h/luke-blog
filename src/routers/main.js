@@ -1,18 +1,12 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Articles from './Articles.js'
+import Articles from './Articles'
+import User from './user'
+import Apps from './apps'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import { withRouter } from 'react-router'
 import styles from './main.css'
 
-const Player = () => {
-    return (
-        <div>
-            <h1>123</h1>
-            <h2>456</h2>
-        </div>
-    )
-}
 class Main extends Component {
     constructor (props) {
         super(props)
@@ -20,6 +14,7 @@ class Main extends Component {
     render() {
         var location = this.props.location
         return (
+<<<<<<< HEAD
             <div
                 className={styles.main}
             >
@@ -52,6 +47,38 @@ class Main extends Component {
                     </CSSTransition>
                 </TransitionGroup>
             </div>
+=======
+            <TransitionGroup 
+                className={styles.main}
+            >
+                <CSSTransition
+                    key={location.pathname}
+                    timeout={{ enter: 800, exit: 400 }}
+                    classNames="fade"
+                >
+                    <Switch
+                        location={location}
+                    >
+                        <Route
+                            exact 
+                            path='/' 
+                            component={Articles}
+                            key='/'
+                        />
+                        <Route 
+                            path='/apps' 
+                            component={Apps}
+                            key='apps'
+                        />
+                        <Route 
+                            path='/user' 
+                            render={() => <User/>} 
+                            key='user'
+                        />
+                    </Switch>
+                </CSSTransition>
+            </TransitionGroup>
+>>>>>>> 763799bcbfccd9171c07d4d7c0490ca6c6cfef43
         )
     }
 }
