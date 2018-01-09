@@ -1,4 +1,11 @@
-.main{background-color: #f8f8f8}
+.main{
+  background-color: #f8f8f8;
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  right: 0;
+  padding-bottom: 1rem;
+}
 :global(.example-enter) {
   opacity: 0.01;
   transition: opacity 300ms ease-in;

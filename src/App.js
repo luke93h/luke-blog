@@ -10,7 +10,7 @@ class App extends Component {
             <div className={styles.App}>
                 <Header />
                 <Main />
-                <Footer/>
+                <Footer />
             </div>
         )
     }
