@@ -9,7 +9,7 @@ class Articles extends Component {
                 className={styles.main}
             >
                 <div className={styles.head}>
-                    <img src="./images/user.png" alt=""/>
+                    <div className={styles.title}>LUKE</div>
                 </div>
             </div>
             

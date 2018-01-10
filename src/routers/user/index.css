@@ -7,9 +7,13 @@
     right: 0;
     padding-bottom: 0.8rem;
     .head{
-        height: 7.6rem;
-        img{
-            width: 100%;
+        padding-top: 0.5rem;
+        height: 4.6rem;
+        background-image: url('../../assets/user.png');
+        .title{
+            text-align: center;
+            font-size: 0.44rem;
+            color: #fff;
         }
     }
 }
