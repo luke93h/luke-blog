@@ -1,16 +1,4 @@
 .main{
-<<<<<<< HEAD
-  background-color: #f8f8f8;
-  position: absolute;
-  top: 1rem;
-  left: 0;
-  right: 0;
-  padding-bottom: 1rem;
-}
-:global(.example-enter) {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-=======
   position: relative;
   height: 100%;
 }
@@ -18,7 +6,6 @@
   left: 100%;
   right: -100%;
   transition: all 400ms linear;
->>>>>>> 763799bcbfccd9171c07d4d7c0490ca6c6cfef43
 }
 
 :global(.fade-enter.fade-enter-active) {

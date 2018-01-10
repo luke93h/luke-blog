@@ -14,40 +14,6 @@ class Main extends Component {
     render() {
         var location = this.props.location
         return (
-<<<<<<< HEAD
-            <div
-                className={styles.main}
-            >
-                <TransitionGroup>
-                    <CSSTransition
-                        key={location.key}
-                        timeout={{ enter: 300, exit: 300 }}
-                        classNames="example"
-                    >
-                        <Switch
-                            location={location}
-                        >
-                            <Route
-                                exact 
-                                path='/' 
-                                component={Articles}
-                                key='/'
-                            />
-                            <Route 
-                                path='/projects/:number' 
-                                component={Player}
-                                key='projects'
-                            />
-                            <Route 
-                                path='/user' 
-                                component={Player} 
-                                key='user'
-                            />
-                        </Switch>
-                    </CSSTransition>
-                </TransitionGroup>
-            </div>
-=======
             <TransitionGroup 
                 className={styles.main}
             >
@@ -78,7 +44,6 @@ class Main extends Component {
                     </Switch>
                 </CSSTransition>
             </TransitionGroup>
->>>>>>> 763799bcbfccd9171c07d4d7c0490ca6c6cfef43
         )
     }
 }
