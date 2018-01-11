@@ -28,7 +28,7 @@ class Articles extends Component {
                             联系方式
                         </div>
                         <div className={styles.tab}>
-                            占位3
+                            爱好
                         </div>
                     </div>
                 </div>
