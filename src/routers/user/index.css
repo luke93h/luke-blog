@@ -10,10 +10,45 @@
         padding-top: 0.5rem;
         height: 4.6rem;
         background-image: url('../../assets/user.png');
+        margin-bottom: -0.4rem;
         .title{
             text-align: center;
             font-size: 0.44rem;
             color: #fff;
+        }
+        .user{
+            img{
+                margin-top: 0.3rem;
+                width: 1.1rem;
+            }
+        }
+        .head-foot{
+            margin-top: 1.3rem;
+            color: #fff;
+        }
+    }
+    .content{
+        background-color: #fff;
+        border-top-left-radius: 0.4rem;
+        border-top-right-radius: 0.4rem;
+        height: 5rem;
+        .tabs{
+            height: 0.8rem;
+            font-size: 0px;
+            white-space: nowrap;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            .tab{
+                height: 0.8rem;
+                font-size: 0.26rem;
+                display: inline-block;
+                width: 33%;
+                line-height: 0.8rem;
+                &:active{
+                    font-weight: bold;
+                    color: #000;
+                    font-size: 0.3rem;
+                }
+            }
         }
     }
 }
