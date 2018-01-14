@@ -22,7 +22,7 @@
                 width: 1.1rem;
             }
         }
-        .head-foot{
+        .headfoot{
             margin-top: 1.3rem;
             color: #fff;
         }
@@ -32,6 +32,7 @@
         border-top-left-radius: 0.4rem;
         border-top-right-radius: 0.4rem;
         height: 5rem;
+        position: relative;
         .tabs{
             height: 0.8rem;
             font-size: 0px;
@@ -43,12 +44,37 @@
                 display: inline-block;
                 width: 33%;
                 line-height: 0.8rem;
-                &:active{
+                text-decoration: none;
+                &.active{
                     font-weight: bold;
                     color: #000;
                     font-size: 0.3rem;
                 }
             }
         }
+        .wrapper{
+            position: relative;
+            padding-top: 0.3rem;
+        }
     }
 }
+:global(.rotate-enter) {
+    transition: all 400ms linear;
+    transform-origin: right center;
+    transition-delay: 400ms;
+    transform: rotateY(90deg);
+  }
+  
+  :global(.rotate-enter.rotate-enter-active) {
+    transform: rotateY(0deg);
+  }
+  
+  :global(.rotate-exit) {
+    transition: all 400ms linear;
+    transform-origin: left center;
+    transform: rotateY(0deg);
+  }
+  
+  :global(.rotate-exit.rotate-exit-active) {
+      transform: rotateY(90deg);
+  };

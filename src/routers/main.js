@@ -13,12 +13,13 @@ class Main extends Component {
     }
     render() {
         var location = this.props.location
+        var key = location.pathname.match(/^\/[a-zA-Z]*/)[0]
         return (
             <TransitionGroup 
                 className={styles.main}
             >
                 <CSSTransition
-                    key={location.pathname}
+                    key={key}
                     timeout={{ enter: 800, exit: 400 }}
                     classNames="fade"
                 >
@@ -36,9 +37,10 @@ class Main extends Component {
                             component={Apps}
                             key='apps'
                         />
+                        
                         <Route 
                             path='/user' 
-                            render={() => <User/>} 
+                            component={User}
                             key='user'
                         />
                     </Switch>

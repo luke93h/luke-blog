@@ -15,6 +15,7 @@
 
 :global(.fade-exit) {
   transition: all 400ms linear;
+  transform-origin: right center;
   right: 0;
   left: 0;
 }

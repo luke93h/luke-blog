@@ -1,0 +1,21 @@
+.main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: left;
+    padding: 25px;
+    .item{
+        font-size: .26rem;
+        line-height: 0.55rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+        padding-bottom: 6px;
+        .title{
+            display: inline-block
+        }
+        .content{
+            display: inline-block;
+        }
+    }
+}
