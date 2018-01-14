@@ -5,5 +5,10 @@
     left: 0;
     right: 0;
     padding-bottom: 0.8rem;
-    background-color: yellow;
+    line-height: 0.8rem;
+    font-size: 0.4rem;
+    .none{
+        color: #666;
+        margin-top: 120px;
+    }
 }

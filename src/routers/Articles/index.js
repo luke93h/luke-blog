@@ -18,23 +18,22 @@ class Articles extends Component {
                         </div>
                     }
                 >
-                    <h6 
+                    <div
                         style={{textAlign:'center'}}
+                        className={styles.title0}
                     >
                         遇到的问题和解决方案
-                    </h6>
-                    <div>1.首页点击项目如何全屏展示?</div>
-                    <div>全屏主要使用了fixed来实现</div>
+                    </div>
+                    <div className={styles.title1} >1.首页点击项目如何全屏展示?</div>
+                    <div className={styles.indent} >全屏主要使用了fixed来实现</div>
                     <div>2.用fixed实现全屏效果时，遇到了什么问题？</div>
-                    <div>
+                    <div className={styles.indent}>
                         fixed在移动端的问题特别多：
                         <p>
                             a.元素定位变为fixed时，会脱离文档流，为了防止后面元素顶上来，最外层的元素定位为relative，并在点击的瞬间先计算高度，并赋值，防止后面的元素顶上来
                         </p>
                         <p>
-                            b.第二层元素定位为fixed，但元素由正常文档流突变为fixed，transtion并不会生效，即不会有缓动效果，为了解决这一问题，该层容器，脱离文档流时，背景透明，top，right，bottom，left为0
-                        </p>
-                        <p>
+                            b.第二层元素定位为fixed，但元素由正常文档流突变为fixed，transtion并不会生效，即不会有缓动效果，为了解决这一问题，该层容器，脱离文档流时，背景透明，top，right，bottom，left为0。
                             第三层元素为实际内容，点击后实际看到的效果由该元素展现，再点击的瞬间，该元素的定位为绝对定位，相对于第二层元素，先计算该元素的top值和bottom值，并赋值给style，之后通过函数计算实时的位置，左右距离则通过css百分比实现缓动
                         </p>
                         <p>
@@ -47,7 +46,7 @@ class Articles extends Component {
                     <div>
                         3.路由动画
                     </div>
-                    <div>
+                    <div className={styles.indent}>
                         路由动画由react-router4和react-transtion-group2来解决，由于这两个库都比较新，百度上的解决方案都不行，甚至连这两个库的官方文档也没有跟上对方的跟新，最后是在stackoverflow上找到了解决方案，<a href="https://stackoverflow.com/questions/46001315/react-router-v4-and-react-transition-group-v2">具体请看</a>
                     </div>
                 </MainBox>
@@ -55,28 +54,21 @@ class Articles extends Component {
                     imgSrc='./images/img2.jpg'
                     title='说明'
                 >
-                    <div>123123132231413242342352344234</div>
-                    <div>123123132231413242342352344234</div>
-                    <div>123123132231413242342352344234</div>
-                    <div>123123132231413242342352344234</div>
-                    <div>123123132231413242342352344234</div>
-                    <div>123123132231413242342352344234</div>
-                    <div>123123132231413242342352344234</div>
-                    <div>123123132231413242342352344234</div>
-                    <div>123123132231413242342352344234</div>
-                    <div>123123132231413242342352344234</div>
+                    <div className={styles.title0}>关于GIT仓库源码说明</div>
+                    <p>本博客主要用于学习，欢迎各位一起学习或提供意见。</p>
+                    <p>如果有需要用于商业用途，请注明出处，谢谢~</p>
                 </MainBox>
                 <MainBox
                     imgSrc='./images/img3.jpg'
                     title='占位1'
                 >
-                    <div>占位1</div>
+                    <div>占位1，待开发</div>
                 </MainBox>
                 <MainBox
                     imgSrc='./images/img4.png'
                     title='占位2'
                 >
-                    <div>占位2</div>
+                    <div>占位2，待开发</div>
                 </MainBox>
             </div>
             

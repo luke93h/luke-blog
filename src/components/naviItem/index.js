@@ -24,10 +24,11 @@ class Footer extends Component {
     render() {
         return (
             <Link 
-                className = {`${styles.item} ${this.state.active?styles.active:''}`}
+                className = {`${styles.item} ${this.state.active || this.props.active ?styles.active:''}`}
                 onTouchStart = {this.onTouchStart}
                 onTouchEnd = {this.onTouchEnd}
                 to = {this.props.to}
+                onClick = {this.props.onClick}
             >
                 <div className={`iconfont ${this.props.icon}`}></div>
             </Link>

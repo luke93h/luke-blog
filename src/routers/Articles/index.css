@@ -2,4 +2,15 @@
     position: absolute;
     text-align: center;
     z-index: 1;
+    padding-bottom: 1rem;
+    .title0{
+        font-size: 0.32rem;
+    }
+    .indent{
+        padding: 0 0.3rem;
+        padding-bottom: 0.3rem;
+    }
+    p{
+        margin-bottom: 0.3rem;
+    }
 }

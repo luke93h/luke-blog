@@ -8,8 +8,17 @@ class Articles extends Component {
             <div
                 className={styles.main}
             >
-                123
+                <div className={styles.title}>
+                    
+                组件库
+                </div>
+                <div className={styles.none}>
+                    暂无内容
+                    <br/>
+                    敬请期待
+                </div>
             </div>
+
             
         )
     }

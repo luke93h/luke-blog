@@ -1,6 +1,7 @@
 .main{
   position: relative;
   height: 100%;
+  padding-bottom: 0.7rem;
 }
 :global(.fade-enter) {
   left: 100%;
