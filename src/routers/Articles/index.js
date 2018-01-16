@@ -57,6 +57,7 @@ class Articles extends Component {
                     <div className={styles.title0}>关于GIT仓库源码说明</div>
                     <p>本博客主要用于学习，欢迎各位一起学习或提供意见。</p>
                     <p>如果有需要用于商业用途，请注明出处，谢谢~</p>
+                    <p><a href="https://github.com/luke93h/luke-blog"GIT仓库地址></a></p>
                 </MainBox>
                 <MainBox
                     imgSrc='./images/img3.jpg'
