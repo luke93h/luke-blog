@@ -1,6 +1,5 @@
-## 个人博客-移动端-开发中
+## 个人博客-移动端
 ### 在线地址
-[开发环境的地址](http://97.64.80.72:3000/)
 ### 技术栈
 * create-react-app，快速搭建webpack脚手架
 * react，核心
@@ -18,3 +17,5 @@ npm run start
 ```
 ### 目标
 实现一款前后端都有的个人博客，作为个人博客使用
+### 暂时搁置
+发现了一整套成熟的开源博客系统，决定去学习一波[jackblog](https://github.com/jackhutu/jackblog-react)。
